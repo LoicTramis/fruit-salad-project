@@ -1,0 +1,56 @@
+.home-page {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(4, 25%);
+
+  header {
+    grid-column: 1 / 3;
+    grid-row: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      font-size: 3rem;
+      color: var(--color-text-strong);
+    }
+    .subtitle {
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--color-text-weak);
+    }
+  }
+  article {
+    grid-column: 1 / 3;
+    grid-row: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+
+    section {
+      grid-column: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h3 {
+        font-size: 2rem;
+        color: var(--color-text-strong);
+      }
+    }
+  }
+  footer {
+    grid-column: 1 / 3;
+    grid-row: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+      font-size: 2.25rem;
+      color: var(--color-text-strong);
+    }
+  }
+}
