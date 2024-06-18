@@ -8,8 +8,11 @@ import FruitsPage from "./pages/FruitsPage";
 import FruitPage from "./pages/FruitPage";
 import NutrientsPage from "./pages/NutrientsPage";
 import SaladsPage from "./pages/SaladsPage";
+import { useState } from "react";
 
 function App() {
+  const [selectedFruits, setSelectedFruits] = useState([]);
+
   return (
     <>
       <Header />
@@ -17,11 +20,17 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/fruits">
-          <Route index element={<FruitsPage />} />
+          <Route index element={<FruitsPage selectedFruits={selectedFruits} setSelectedFruits={setSelectedFruits} />} />
           <Route path=":fruitId" element={<FruitPage />} />
         </Route>
-        <Route path="/nutrients" element={<NutrientsPage />} />
-        <Route path="/my-salad" element={<SaladsPage />} />
+        <Route
+          path="/nutrients"
+          element={<NutrientsPage selectedFruits={selectedFruits} setSelectedFruits={setSelectedFruits} />}
+        />
+        <Route
+          path="/my-salad"
+          element={<SaladsPage selectedFruits={selectedFruits} setSelectedFruits={setSelectedFruits} />}
+        />
       </Routes>
 
       <Footer />

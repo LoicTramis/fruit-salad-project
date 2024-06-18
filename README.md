@@ -9,6 +9,10 @@
 - see fruit available in your region
 - see available seasonal fruits 
 
+## Deployment
+- Front: https://fruit-salad.netlify.app/
+- Back: https://fruit-salad-server.onrender.com/
+
 ## Coding
 - test with one request for suggestion recipe
 
