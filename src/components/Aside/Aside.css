@@ -1,0 +1,19 @@
+.fruit-aside {
+  padding: 1rem;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  li:first-child {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  li:not(:first-child) {
+    margin-left: 0.5rem;
+  }
+  li {
+    list-style-type: none;
+  }
+}

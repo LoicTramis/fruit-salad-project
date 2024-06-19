@@ -35,7 +35,7 @@ const FruitCard = ({ fruit, selectedFruits, setSelectedFruits }) => {
   };
 
   const handleAddFruit = (fruit: Fruit) => {
-    setSelectedFruits([...selectedFruits, fruit]);
+    setSelectedFruits(new Set([...selectedFruits, fruit]));
   };
 
   const handleImageLoad = () => {

@@ -1,4 +1,5 @@
 import React from "react";
+import "./Aside.css";
 
 type Fruit = {
   id: number;
@@ -17,11 +18,13 @@ type Fruit = {
 
 const Aside = ({ selectedFruits, setSelectedFruits }) => {
   return (
-    <aside>
+    <aside className="fruit-aside">
       <ul>
-        {selectedFruits.map((fruit: Fruit) => {
-          return <li key={crypto.randomUUID()}>{fruit.name}</li>;
-        })}
+        <li>Selected fruits</li>
+        {selectedFruits &&
+          [...selectedFruits].map((fruit: Fruit) => {
+            return <li key={crypto.randomUUID()}>{fruit.name}</li>;
+          })}
       </ul>
     </aside>
   );

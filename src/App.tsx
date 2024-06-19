@@ -11,7 +11,7 @@ import SaladsPage from "./pages/SaladsPage";
 import { useState } from "react";
 
 function App() {
-  const [selectedFruits, setSelectedFruits] = useState([]);
+  const [selectedFruits, setSelectedFruits] = useState(new Set());
 
   return (
     <>
@@ -21,7 +21,10 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/fruits">
           <Route index element={<FruitsPage selectedFruits={selectedFruits} setSelectedFruits={setSelectedFruits} />} />
-          <Route path=":fruitId" element={<FruitPage />} />
+          <Route
+            path=":fruitId"
+            element={<FruitPage selectedFruits={selectedFruits} setSelectedFruits={setSelectedFruits} />}
+          />
         </Route>
         <Route
           path="/nutrients"
