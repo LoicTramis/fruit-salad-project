@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Aside from "../components/Aside/Aside";
 import axios from "axios";
@@ -20,9 +20,7 @@ type Fruit = {
   };
 };
 
-const FruitsPage = ({ selectedFruits, setSelectedFruits }) => {
-  const [fruits, setFruits] = useState(null);
-
+const FruitsPage = ({ fruits, setFruits }) => {
   const fetchFruits = async () => {
     try {
       const responseFruits = await axios.get(import.meta.env.VITE_URL + `/fruits`);
@@ -39,7 +37,7 @@ const FruitsPage = ({ selectedFruits, setSelectedFruits }) => {
   if (!fruits) {
     return (
       <div className="content-page">
-        <Aside selectedFruits={selectedFruits} setSelectedFruits={setSelectedFruits} />
+        <Aside fruits={fruits} />
         <main className="main-content">
           <h2>Loading...</h2>
         </main>
@@ -49,17 +47,10 @@ const FruitsPage = ({ selectedFruits, setSelectedFruits }) => {
 
   return (
     <div className="content-page">
-      <Aside selectedFruits={selectedFruits} setSelectedFruits={setSelectedFruits} />
-      <main className="fruit-content">
+      <Aside fruits={fruits} />
+      <main className="fruits-content">
         {fruits.map((fruit: Fruit) => {
-          return (
-            <FruitCard
-              key={fruit.id}
-              fruit={fruit}
-              selectedFruits={selectedFruits}
-              setSelectedFruits={setSelectedFruits}
-            />
-          );
+          return <FruitCard key={fruit.id} fruit={fruit} />;
         })}
       </main>
     </div>

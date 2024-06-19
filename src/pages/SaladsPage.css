@@ -1,0 +1,45 @@
+.salads-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding: 2rem;
+
+  .no-fruit-message {
+    font-size: 2.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .salads-ingredients {
+    width: 100%;
+
+    margin: 1.5rem 0;
+
+    ul {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 1rem;
+
+      li {
+        list-style-type: none;
+        width: 10%;
+        padding: 0.5rem;
+        text-align: center;
+        border: 1px solid;
+        border-radius: 10px;
+      }
+    }
+    .salads-nutriments {
+      width: 100%;
+      gap: 1rem;
+
+      li {
+        width: 40%;
+      }
+    }
+  }
+}

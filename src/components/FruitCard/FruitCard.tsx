@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
-import "./FruitCard.css";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import ColorThief from "colorthief";
+import { SelectedFruitsContext } from "../../App";
+import "./FruitCard.css";
 
 type Fruit = {
   id: number;
@@ -18,11 +19,13 @@ type Fruit = {
   };
 };
 
-const FruitCard = ({ fruit, selectedFruits, setSelectedFruits }) => {
+const FruitCard = ({ fruit }) => {
+  const { selectedFruits, setSelectedFruits } = useContext(SelectedFruitsContext);
   const [image, setImage] = useState(null);
   const [imageColor, setImageColor] = useState(null);
   const [isHovering, setIsHovering] = useState(false);
   const imageRef = useRef(null);
+
   const colorThief = new ColorThief();
 
   const fetchImage = async () => {
@@ -34,8 +37,12 @@ const FruitCard = ({ fruit, selectedFruits, setSelectedFruits }) => {
     }
   };
 
-  const handleAddFruit = (fruit: Fruit) => {
-    setSelectedFruits(new Set([...selectedFruits, fruit]));
+  const handleAddFruit = async (fruit: Fruit) => {
+    console.log(fruit.name);
+    console.log(selectedFruits);
+    const newSet = new Set([...selectedFruits, fruit.id]);
+    console.log(newSet);
+    setSelectedFruits(newSet);
   };
 
   const handleImageLoad = () => {

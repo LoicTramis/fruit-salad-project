@@ -1,4 +1,5 @@
-import React from "react";
+import { useContext } from "react";
+import { SelectedFruitsContext } from "../../App";
 import "./Aside.css";
 
 type Fruit = {
@@ -16,14 +17,17 @@ type Fruit = {
   };
 };
 
-const Aside = ({ selectedFruits, setSelectedFruits }) => {
+const Aside = ({ fruits }) => {
+  const { selectedFruits } = useContext(SelectedFruitsContext);
+
   return (
     <aside className="fruit-aside">
+      <h3>Selected fruits</h3>
       <ul>
-        <li>Selected fruits</li>
         {selectedFruits &&
-          [...selectedFruits].map((fruit: Fruit) => {
-            return <li key={crypto.randomUUID()}>{fruit.name}</li>;
+          [...selectedFruits].map((fruitMap: number) => {
+            const foundFruit = fruits.find((fruitFind: Fruit) => fruitFind.id === fruitMap);
+            return <li key={foundFruit.id}>{foundFruit.name}</li>;
           })}
       </ul>
     </aside>

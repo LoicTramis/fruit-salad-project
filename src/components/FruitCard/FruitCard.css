@@ -11,7 +11,11 @@
   align-items: center;
 
   h4 {
+    padding-top: 1rem;
     margin-bottom: auto;
+  }
+  img {
+    padding-bottom: 0.5rem;
   }
 }
 .fruit-card:hover > h4,
