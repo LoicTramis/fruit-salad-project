@@ -20,20 +20,7 @@ type Fruit = {
   };
 };
 
-const FruitsPage = ({ fruits, setFruits }) => {
-  const fetchFruits = async () => {
-    try {
-      const responseFruits = await axios.get(import.meta.env.VITE_URL + `/fruits`);
-      setFruits(responseFruits.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchFruits();
-  }, []);
-
+const FruitsPage = ({ fruits }) => {
   if (!fruits) {
     return (
       <div className="content-page">

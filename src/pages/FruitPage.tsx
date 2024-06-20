@@ -28,7 +28,7 @@ const FruitPage = ({ fruits }) => {
 
   useEffect(() => {
     fetchFruit();
-  }, []);
+  }, [fruitId]);
 
   useEffect(() => {
     if (fruit && fruit.name) {

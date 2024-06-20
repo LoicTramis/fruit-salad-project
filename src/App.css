@@ -7,7 +7,7 @@ main {
   border: 1px solid var(--color-background);
   background-color: var(--color-background);
   border-radius: 10px;
-  /* box-shadow: 0px 0px 15px var(--color-fill); */
+  box-shadow: 0px 0px 15px var(--color-fill);
   height: calc(100vh - (7vh * 2));
   margin: 0 1rem;
   flex-grow: 1;

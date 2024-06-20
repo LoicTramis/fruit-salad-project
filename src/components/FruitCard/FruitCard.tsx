@@ -38,10 +38,7 @@ const FruitCard = ({ fruit }) => {
   };
 
   const handleAddFruit = async (fruit: Fruit) => {
-    console.log(fruit.name);
-    console.log(selectedFruits);
     const newSet = new Set([...selectedFruits, fruit.id]);
-    console.log(newSet);
     setSelectedFruits(newSet);
   };
 
