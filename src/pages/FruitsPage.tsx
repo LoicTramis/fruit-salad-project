@@ -1,7 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import Aside from "../components/Aside/Aside";
-import axios from "axios";
 import FruitCard from "../components/FruitCard/FruitCard";
 import "./FruitsPage.css";
 

@@ -5,8 +5,10 @@ const HomePage = () => {
   return (
     <main className="home-page">
       <header>
+        <section>
         <h2>Welcome Fruit Salad!</h2>
         <p className="subtitle">and how to use it</p>
+        </section>
       </header>
       <article>
         <section>

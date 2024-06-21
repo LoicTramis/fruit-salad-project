@@ -40,7 +40,7 @@ const Aside = ({ fruits }) => {
   const handleMouseEnter = (id: number) => {
     setIsMouseOverButton(id);
   };
-  const handleMouseLeave = (id: number) => {
+  const handleMouseLeave = () => {
     setIsMouseOverButton(null);
   };
 
@@ -82,7 +82,7 @@ const Aside = ({ fruits }) => {
                 <button
                   className="delete-button"
                   onMouseEnter={() => handleMouseEnter(foundFruit.id)}
-                  onMouseLeave={() => handleMouseLeave(foundFruit.id)}
+                  onMouseLeave={() => handleMouseLeave()}
                   onClick={() => handleDelete(event, foundFruit.id)}>
                   {isMouseOverButton !== foundFruit.id && <img src={DeleteIcon} />}
                   {isMouseOverButton === foundFruit.id && <img src={DeleteIconHover} />}
